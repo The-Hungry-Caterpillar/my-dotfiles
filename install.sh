@@ -6,6 +6,8 @@
 # - [] Linux
 # - [] WSL
 
+# ALIAS FOR THE TMUX MAGIC
+
 echo "enter 'mac' or 'linux'"
 read ${OS}
 if [[ ${OS} != 'mac' && ${OS} != 'linux' ]]; then
@@ -30,26 +32,26 @@ cd ${HOME}
 [[ -f .tmux.conf ]] && mv .tmux.conf .tmux.conf-backup
 
 # make soft links
-ln -s ${PWD}/vim_runtime .vim_runtime
-ln -s ${PWD}/oh-my-bash .oh-my-bash
-ln -s ${PWD}/tmux/tmux.conf ./.tmux.conf
+ln -s ${HERE}/vim_runtime .vim_runtime
+ln -s ${HERE}/oh-my-bash .oh-my-bash
+ln -s ${HERE}/tmux/tmux.conf ./.tmux.conf
 # make soft link depending on OS
 if [[ ${OS} == 'mac' ]]; then
     [[ -f .bash_profile ]] && mv .bash_profile .bash_profile-backup
-    ln -s ${PWD}/oh-my-bash/bash_profile .bash_profile
+    ln -s ${HERE}/oh-my-bash/bash_profile .bash_profile
 else
     [[ -f .bashrc ]] && mv .bashrc .bashrc-backup
-    ln -s ${PWD}/oh-my-bash/bash_profile .bashrc
+    ln -s ${HERE}/oh-my-bash/bash_profile .bashrc
 fi
 # alacritty
 [[ ${ALA} == 'yes' ]] && \
     mkdir -p .config && \
     cd .config && \
-    ln -s ${PWD}/alacritty/ alacritty &&
+    ln -s ${HERE}/alacritty/ alacritty &&
     cd ..
 
 # install vim runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # go back
-cd ${PWD}
+cd ${HERE}
