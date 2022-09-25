@@ -1,0 +1,52 @@
+env:
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use `alacritty` if it is
+  # available, otherwise `xterm-256color` is used.
+  TERM: xterm-256color
+
+cursor:
+  # Block Underline or Beam
+  style: Block
+
+font:
+  normal:
+    # Needs to be powerline font if using zsh theme with powerline
+    family: Ubuntu Mono derivative Powerline
+  # Font size
+  size: 18
+  # Better font rendering for mac
+  use_thin_strokes: true
+
+election:
+  # This string contains all characters that are used as separators for
+  # "semantic words" in Alacritty.
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+  # When true, selected text will be copied to the primary clipboard
+  save_to_clipboard: true
+
+window:
+  # Spread additional padding evenly around the terminal content.
+  padding:
+    x: 10
+    y: 10
+  # Remove buttons
+  decorations: none
+  # Opacity
+  opacity: 0.92
+  # Dimensions if not SimpleFullscreen
+  dimensions:
+    columns: 140
+    lines: 38
+
+import:
+  # Favorites:
+  #   tokyo-night-storm -- blueish dark
+  #   tokyo-night -- blueish dark
+  #   taerminal -- looks like linux terminal but more pastel
+  #   omni -- similar to taerminal
+  #   nord -- cold
+  #   tomorrow_night_bright
+  #   campbell -- dark theme, deep blues and greens
+  - /Users/jogata/src/alacritty-theme/themes/gruvbox_dark
