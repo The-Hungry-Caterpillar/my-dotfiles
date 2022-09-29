@@ -52,6 +52,9 @@ fi
     ln -s ${HERE}/alacritty/ alacritty &&
     cd ..
 
+# for making .Rmd documents
+echo "alias mkRmd=\"cat ${HERE}/scripts/Rmd_template.Rmd >> \$1\"" >> .oh-my-bash/aliases/my.aliases.sh
+
 # install vim runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 
