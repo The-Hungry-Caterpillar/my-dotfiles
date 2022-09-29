@@ -9,6 +9,7 @@
 # ALIAS FOR THE TMUX MAGIC
 
 echo "enter 'mac' or 'linux'"
+echo ""
 read ${OS}
 if [[ ${OS} != 'mac' && ${OS} != 'linux' ]]; then
     echo "must enter 'mac' or 'linux'"
@@ -16,6 +17,7 @@ if [[ ${OS} != 'mac' && ${OS} != 'linux' ]]; then
 fi
 
 echo "you want alacritty?"
+echo ""
 read ${ALA}
 if [[ ${ALA} != 'yes' && ${ALA} != 'no' ]]; then
     echo "must enter 'yes' or 'no'"

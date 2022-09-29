@@ -49,4 +49,4 @@ import:
   #   nord -- cold
   #   tomorrow_night_bright
   #   campbell -- dark theme, deep blues and greens
-  - /Users/jogata/src/alacritty-theme/themes/gruvbox_dark
+  - /Users/jogata/src/alacritty-theme/themes/gruvbox_dark.yaml

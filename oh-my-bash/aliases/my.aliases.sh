@@ -41,6 +41,9 @@ function hg() {
     history | grep "$1";
 }
 
+# make rmd template
+alias mkRmd="cat /Users/jogata/Documents/GitHub/my-dotfiles/scripts/Rmd_template.Rmd >> $1"
+
 # goodbye
 alias yeet="rm -rf $1"
 
@@ -68,6 +71,7 @@ alias Tedit='vim ~/.config/alacritty/alacritty.yml'
 # print passwords
 alias passwords='cat ~/Documents/passwords'
 
+# tmux shortcut script
 alias tm='sh ~/Documents/GitHub/my_collections/my_dotfiles/tmux/tmux_new_or_attach.sh'
 
 # for making homebrew work, macOS only

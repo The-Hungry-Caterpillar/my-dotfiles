@@ -1,0 +1,22 @@
+---
+title: ""
+author: "Jonathan Ogata"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: cerulean
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+knitr::opts_chunk$set(message = F)
+knitr::opts_chunk$set(warning = F)
+
+# Libaries ------------------------------------
+shhh <- suppressPackageStartupMessages # It's a library, so shhh!
+
+# Paths ----------------------------------------
+# main directory
+my.dir <- file.path()
+```

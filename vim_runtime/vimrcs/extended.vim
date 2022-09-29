@@ -47,6 +47,9 @@ colorscheme gruvbox
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 
+" to disable the automatic <- in R
+let R_assign = 0
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fast editing and reloading of vimrc configs
