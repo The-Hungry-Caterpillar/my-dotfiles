@@ -41,7 +41,7 @@ autocmd VimEnter * hi Normal ctermbg=none
 
 " general settings
 set background=dark
-colorscheme gruvbox
+colorscheme papercolor
 
 " for slime (targeting a REPL)
 let g:slime_target = "tmux"
@@ -49,6 +49,9 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 
 " to disable the automatic <- in R
 let R_assign = 0
+
+" to disable spell check
+set nospell
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -109,7 +112,7 @@ iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 inoremap jj <Esc>
 
 " turn of autocomplete of paranthesis, quotes, etc.
-let g:AutoPairsLoaded = 0
+"let g:AutoPairsLoaded = 1
 
 " set relative line numbers
 set number
