@@ -36,12 +36,15 @@ let g:dracula_colorterm = 0
 " solarized settings
 let g:solarized_termtrans = 1
 
-" gruvbox settings
-autocmd VimEnter * hi Normal ctermbg=none
+" github dark 
+" let g:gh_color='soft'
+
+" same background color as terminal theme, universal
+" autocmd VimEnter * hi Normal ctermbg=none
 
 " general settings
 set background=dark
-colorscheme papercolor
+colorscheme ghdark
 
 " for slime (targeting a REPL)
 let g:slime_target = "tmux"
