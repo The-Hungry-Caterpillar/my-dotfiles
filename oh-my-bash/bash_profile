@@ -13,14 +13,14 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # THEMES
 # OSH_THEME='purity'
-OSH_THEME='minimal' # looks nice. very minimal
-# OSH_THEME='simple' 
-# OSH_THEME='clean' # name, short directory, git status
+# OSH_THEME='minimal' # looks nice. very minimal
 # OSH_THEME='standard' # environment, name, machine, full directory
 # OSH_THEME='agnoster' # thick. name, full directory. fancy looking
 # OSH_THEME='sirup' # working directory, short get status
 # OSH_THEME="font"
-# OSH_THEME='random'
+OSH_THEME=half-life
+# OSH_THEME=pro
+#OSH_THEME='random'
 
 
 # Uncomment the following line to use case-sensitive completion.
@@ -121,18 +121,6 @@ source "$OSH"/oh-my-bash.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/jogata/opt/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/jogata/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/jogata/opt/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/jogata/opt/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+export PATH="$PATH":$HOME/my-path

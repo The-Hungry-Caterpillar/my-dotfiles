@@ -3,7 +3,8 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  TERM: xterm-256color
+  #TERM: xterm-256color
+  TERM: alacritty
 
 cursor:
   # Block Underline or Beam
@@ -34,11 +35,12 @@ window:
   # Remove buttons
   decorations: none
   # Opacity
-  opacity: 0.92
+  #opacity: 0.9
+  opacity: 1
   # Dimensions if not SimpleFullscreen
   dimensions:
-    columns: 140
-    lines: 38
+    columns: 86
+    lines: 50
 
 import:
   # Entire list:
@@ -101,9 +103,9 @@ import:
     # wombat.yaml
     # xterm.yaml
   # Favorites:
-  #   seashells.yaml -- rich greens
-  #   taerminal -- looks like linux terminal but more pastel
-  #   omni -- similar to taerminal
-  #   nord -- cold
-  #   tomorrow_night_bright
-  - /Users/jogata/src/alacritty-theme/themes/omni.yaml
+  #   remedy_dark.yaml -- rich looking
+  #   palenight.yml -- goes well with PaperColor
+  #   horizon_dark.yaml
+  #   ayu_dark.yaml # stock looking but dark and nicer, probs my fave
+  #   one_dark.yaml
+  - /Users/jogata/src/alacritty-theme/themes/ayu_dark.yaml

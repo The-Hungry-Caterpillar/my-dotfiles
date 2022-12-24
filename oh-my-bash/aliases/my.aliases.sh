@@ -13,6 +13,8 @@ alias fenn="ssh ogataj@fenn.vcu.edu"
 # Group HPC, for ARC.
 alias group="ssh ogataj@group.vipbg.vcu.edu"
 
+alias vim="nvim"
+
 # for cleaning bed files
 function makeBed() {
 	cut -f1,2,3 $1 > temp && mv temp $1;
@@ -58,16 +60,12 @@ alias tree='tree --dirsfirst -F'
 
 # source bash_profile
 alias hello='source ~/.bash_profile'
-
 # edit bash_profile
 alias edit='vim ~/.bash_profile'
-
 # edit vimrc
-alias Vedit='vim ~/.vim_runtime/vimrcs/extended.vim && vim ~/.vim_runtime/vimrcs/plugins_config.vim'
-
+alias Vedit='vim ~/.vim_runtime/vimrcs/extended.vim ~/.vim_runtime/vimrcs/plugins_config.vim'
 # Terminal edit: edit alacritty terminal config file
 alias Tedit='vim ~/.config/alacritty/alacritty.yml'
-
 # print passwords
 alias passwords='cat ~/Documents/passwords'
 
