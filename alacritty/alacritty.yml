@@ -35,8 +35,8 @@ window:
   # Remove buttons
   decorations: none
   # Opacity
-  #opacity: 0.9
-  opacity: 1
+  opacity: 0.93
+  #opacity: 1
   # Dimensions if not SimpleFullscreen
   dimensions:
     columns: 86

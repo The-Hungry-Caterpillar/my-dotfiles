@@ -11,7 +11,6 @@ return require('packer').startup(function(use)
   -- Fuzzy finder
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
-		-- or                            , branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
@@ -60,12 +59,15 @@ return require('packer').startup(function(use)
       }
     }
 
+-- Dark and colorful themes ---------------------------------------------------
 --  -- Rose-pine color scheme
 --  use({
 --      'rose-pine/neovim',
 --      as = 'rose-pine',
 --      config = function()
 --          vim.cmd('colorscheme rose-pine')
+--          vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+--          vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 --      end
 --  })
 
@@ -75,6 +77,8 @@ return require('packer').startup(function(use)
 --      as = 'ayu',
 --      config = function()
 --          vim.cmd('colorscheme ayu')
+--          vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+--          vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 --      end
 --  })
 
@@ -84,20 +88,32 @@ return require('packer').startup(function(use)
       as = 'tokyonight',
       config = function()
           vim.cmd('colorscheme tokyonight')
+          vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+          vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
       end
   })
 
---  -- melange  
+-- Earthy themes --------------------------------------------------------------
+  -- melange  
 --  use({
 --      'savq/melange',
 --      as = 'melange',
 --      config = function()
 --          vim.cmd('colorscheme melange')
+--          vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+--          vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 --      end
 --  })
 
-
-
-
+--  -- gruvbox material
+--  use({
+--      'sainnhe/gruvbox-material',
+--      as = 'gruvbox-material',
+--      config = function()
+--          vim.cmd('colorscheme gruvbox-material')
+--          vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+--          vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+--      end
+--  })
 
 end)
