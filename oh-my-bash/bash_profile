@@ -121,6 +121,4 @@ source "$OSH"/oh-my-bash.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 export PATH="$PATH":$HOME/my-path

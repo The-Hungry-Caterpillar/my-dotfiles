@@ -1,6 +1,11 @@
+-- <leader>fv to exit file and go back to explorer
 vim.keymap.set("n", "<leader>fv", vim.cmd.Ex)
+
 -- jj for quick esc to normal mode 
 vim.keymap.set("i", "jj", "<Esc>")
+
+-- <leader>w to save changes
+vim.keymap.set("n", "<leader>w", vim.cmd.w)
 
 -- move lines in view mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

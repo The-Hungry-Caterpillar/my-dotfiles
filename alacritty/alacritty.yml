@@ -43,69 +43,10 @@ window:
     lines: 50
 
 import:
-  # Entire list:
-    # Cobalt2.yaml
-    # afterglow.yaml
-    # argonaut.yaml
-    # atom_one_light.yaml
-    # ayu_dark.yaml
-    # base16_default_dark.yaml
-    # blood_moon.yaml
-    # breeze.yaml
-    # campbell.yaml
-    # challenger_deep.yaml
-    # cyber_punk_neon.yaml
-    # darcula.yaml
-    # dark_pastels.yaml
-    # doom_one.yml
-    # dracula.yaml
-    # falcon.yaml
-    # flat_remix.yml
-    # gotham.yaml
-    # gruvbox_dark.yaml
-    # gruvbox_light.yaml
-    # gruvbox_material.yml
-    # high_contrast.yaml
-    # horizon-dark.yaml
-    # hyper.yaml
-    # iterm.yaml
-    # konsole_linux.yaml
-    # low_contrast.yaml
-    # material_theme.yaml
-    # material_theme_mod.yaml
-    # monokai_pro.yaml
-    # moonlight_ii_vscode.yaml
-    # night_owlish_light.yaml
-    # nord.yaml
-    # oceanic_next.yaml
-    # omni.yml
-    # one_dark.yaml
-    # palenight.yml
-    # papercolor_dark.yaml
-    # papercolor_light.yaml
-    # pencil_dark.yaml
-    # pencil_light.yaml
-    # remedy_dark.yaml
-    # seashells.yaml
-    # smoooooth.yml
-    # snazzy.yaml
-    # solarized_dark.yaml
-    # solarized_light.yaml
-    # taerminal.yaml
-    # tango_dark.yaml
-    # tender.yaml
-    # terminal_app.yaml
-    # thelovelace.yaml
-    # tokyo-night-storm.yaml
-    # tokyo-night.yaml
-    # tomorrow_night.yaml
-    # tomorrow_night_bright.yaml
-    # wombat.yaml
-    # xterm.yaml
   # Favorites:
   #   remedy_dark.yaml -- rich looking
   #   palenight.yml -- goes well with PaperColor
   #   horizon_dark.yaml
   #   ayu_dark.yaml # stock looking but dark and nicer, probs my fave
   #   one_dark.yaml
-  - /Users/jogata/src/alacritty-theme/themes/ayu_dark.yaml
+  - /Users/jogata/src/alacritty-theme/themes/tokyo-night.yaml
