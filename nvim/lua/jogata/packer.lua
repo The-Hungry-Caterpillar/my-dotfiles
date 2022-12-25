@@ -60,6 +60,17 @@ return require('packer').startup(function(use)
     }
 
 -- Dark and colorful themes ---------------------------------------------------
+  -- tokyo night  
+  use({
+      'ghifarit53/tokyonight-vim',
+      as = 'tokyonight',
+      config = function()
+          vim.cmd('colorscheme tokyonight')
+          vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+          vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+      end
+  })
+
 --  -- Rose-pine color scheme
 --  use({
 --      'rose-pine/neovim',
@@ -82,18 +93,19 @@ return require('packer').startup(function(use)
 --      end
 --  })
 
-  -- tokyo night  
-  use({
-      'ghifarit53/tokyonight-vim',
-      as = 'tokyonight',
-      config = function()
-          vim.cmd('colorscheme tokyonight')
-          vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-          vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-      end
-  })
 
 -- Earthy themes --------------------------------------------------------------
+--  -- gruvbox material
+--  use({
+--      'sainnhe/gruvbox-material',
+--      as = 'gruvbox-material',
+--      config = function()
+--          vim.cmd('colorscheme gruvbox-material')
+--          vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+--          vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+--      end
+--  })
+
   -- melange  
 --  use({
 --      'savq/melange',
@@ -105,15 +117,5 @@ return require('packer').startup(function(use)
 --      end
 --  })
 
---  -- gruvbox material
---  use({
---      'sainnhe/gruvbox-material',
---      as = 'gruvbox-material',
---      config = function()
---          vim.cmd('colorscheme gruvbox-material')
---          vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
---          vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
---      end
---  })
 
 end)
