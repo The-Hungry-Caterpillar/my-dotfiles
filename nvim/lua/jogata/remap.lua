@@ -23,3 +23,13 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("v", "<leader>y", "\"+y")
+
+-- Create windows easier, tmux-like
+vim.keymap.set("n", "w|", "<C-w>v")
+vim.keymap.set("n", "w_", "<C-w>s")
+
+-- Move through windows like a ninja
+vim.keymap.set("n", "wh", "<C-w>h")
+vim.keymap.set("n", "wj", "<C-w>j")
+vim.keymap.set("n", "wk", "<C-w>k")
+vim.keymap.set("n", "wl", "<C-w>l")
