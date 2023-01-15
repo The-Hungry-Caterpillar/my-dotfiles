@@ -1,0 +1,97 @@
+" Name: {{.Name}} Colorscheme
+" Author: robertmeta (on Github)
+" URL: https://github.com/robertmeta/nofrils
+" (see this url for latest release & screenshots)
+" License: OSI approved MIT license
+
+{{define "condAssign"}}{{if .val}} {{.attr}}={{.val}}{{end}}{{end}}
+{{define "textStyle"}}{{/*
+	*/}}{{template "condAssign" assign .FG.TermCode "ctermfg"}}{{/*
+	*/}}{{template "condAssign" assign .BG.TermCode "ctermbg"}}{{/*
+	*/}}{{template "condAssign" assign .FG.GuiCode  "guifg"}}{{/*
+	*/}}{{template "condAssign" assign .BG.GuiCode  "guibg"}}{{/*
+	*/}}{{template "condAssign" assign .Attr        "term"}}{{/*
+	*/}}{{template "condAssign" assign .Attr        "cterm"}}{{/*
+	*/}}{{template "condAssign" assign .Attr        "gui"}}{{/*
+*/}}{{end}}
+
+hi clear
+if exists("syntax_on")
+    syntax reset
+endif
+
+let g:colors_name = "{{.Slug}}"
+
+if !exists("g:nofrils_strbackgrounds")
+    let g:nofrils_strbackgrounds = 0
+endif
+if !exists("g:nofrils_heavycomments")
+    let g:nofrils_heavycomments = 0
+endif
+if !exists("g:nofrils_heavylinenumbers")
+    let g:nofrils_heavylinenumbers = 0
+endif
+
+" Baseline{{range .Rows}}
+hi {{.Name}}{{template "textStyle" .}}{{end}}
+
+" Helper Functions
+function! NofrilsFocusComments()
+    hi Comment{{template "textStyle" .NormalRow}}
+    if g:nofrils_heavycomments
+        hi Comment{{template "textStyle" .HeavyCommentRow}}
+    end
+
+    hi Normal{{template "textStyle" .FadedRow}}
+    hi LineNr{{template "textStyle" .FadedRow}}
+    hi Character{{template "textStyle" .FadedRow}}
+    hi String{{template "textStyle" .FadedRow}}
+endfunction
+
+function! NofrilsFocusCode()
+    hi Normal{{template "textStyle" .NormalRow}}
+    if g:nofrils_strbackgrounds
+        hi Character{{template "textStyle" .HeavyStringRow}}
+        hi String{{template "textStyle" .HeavyStringRow}}
+    end
+
+    hi Comment{{template "textStyle" .FadedRow}}
+    hi LineNr{{template "textStyle" .FadedRow}}
+    hi Character{{template "textStyle" .FadedRow}}
+    hi String{{template "textStyle" .FadedRow}}
+
+endfunction
+
+function! NofrilsNormal()
+    hi Normal{{template "textStyle" .NormalRow}}
+
+    hi Character{{template "textStyle" .NormalRow}}
+    hi String{{template "textStyle" .NormalRow}}
+    " Optional Syntax Features
+    if g:nofrils_strbackgrounds
+        hi Character{{template "textStyle" .HeavyStringRow}}
+        hi String{{template "textStyle" .HeavyStringRow}}
+    end
+
+    hi Comment{{template "textStyle" .FadedRow}}
+    if g:nofrils_heavycomments
+        hi Comment{{template "textStyle" .HeavyCommentRow}}
+    end
+
+    hi LineNr{{template "textStyle" .FadedRow}}
+    if g:nofrils_heavylinenumbers
+        hi LineNr{{template "textStyle" .HeavyLineRow}}
+    end
+endfunction
+
+" Command mappings
+command! NofrilsDark :colo nofrils-dark
+command! NofrilsLight :colo nofrils-light
+command! NofrilsSepia :colo nofrils-sepia
+command! NofrilsAcme :colo nofrils-acme
+command! NofrilsFocusNormal :call NofrilsNormal()
+command! NofrilsFocusCode :call NofrilsFocusCode()
+command! NofrilsFocusComments :call NofrilsFocusComments()
+
+" Setup normal settings
+call NofrilsNormal()

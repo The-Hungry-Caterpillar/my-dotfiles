@@ -1,6 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Important: 
-"       This requries that you install https://github.com/amix/vimrc !
+"       This requires that you install https://github.com/amix/vimrc !
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -27,80 +27,46 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Theme
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Colorscheme
-set t_Co=256
-
-" dracula settings
-let g:dracula_colorterm = 0
-let g:dracula_italic = 0
-
-" solarized settings
-let g:solarized_termtrans = 0
-
-" same background color as terminal theme, universal
-"autocmd VimEnter * hi Normal ctermbg=none
-
-" general settings
+" Use terminal background
+autocmd VimEnter * hi Normal ctermbg=none
+" Better colors
 set termguicolors
+
+" Colorscheme
 set background=dark
-colorscheme solarized
-"colorscheme gruvbox
+colorscheme onedark
+"colorscheme peaksea
 "colorscheme dracula
-"colorscheme fogbell
-"colorscheme fogbell_light 
+"colorscheme nofrils-dark
+"colorscheme nofrils-light 
+"colorscheme nofrils-sepia
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => My stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 'jj' returns to normal mode
-inoremap jj <Esc>
+" jj returns to normal mode
+inoremap jj <Esc> 
 
-" Indentation stuff
-set noai nocin nosi inde=<CR>
-set tabstop=2
-set shiftwidth=2
+" Indentation
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
-" autocomplete of paranthesis, quotes, etc.
-"let g:AutoPairsLoaded = 1
-
-" set relative line numbers
+" Set line numbers
 set number
 set relativenumber
 
 " Set vertical line at 80 columns
-hi ColorColumn ctermbg=black
+hi ColorColumn ctermbg=235
 set colorcolumn=80
 
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim slime
+" => Fast editing and reloading of vimrc configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" for slime (targeting a REPL)
-let g:slime_target = "tmux"
-" for default tmux window
-let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => nvim-R
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" to disable the automatic <- in R
-let R_assign = 0
-" turn off auto start
-let R_auto_start = 0
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim pandoc
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" turn of spell check
-let g:pandoc#spell#enabled=0
+map <leader>e :e! ~/.vim_runtime/my_configs.vim<cr>
+autocmd! bufwritepost ~/.vim_runtime/my_configs.vim source ~/.vim_runtime/my_configs.vim
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -142,9 +108,64 @@ imap ½ $
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Parenthesis/bracket
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+vnoremap $1 <esc>`>a)<esc>`<i(<esc>
+vnoremap $2 <esc>`>a]<esc>`<i[<esc>
+vnoremap $3 <esc>`>a}<esc>`<i{<esc>
+vnoremap $$ <esc>`>a"<esc>`<i"<esc>
+vnoremap $q <esc>`>a'<esc>`<i'<esc>
+vnoremap $e <esc>`>a`<esc>`<i`<esc>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General abbreviations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 iab xdate <C-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Omni complete functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Ack searching and cope displaying
+"    requires ack.vim - it's much better than vimgrep/grep
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use the the_silver_searcher if possible (much faster than Ack)
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --smart-case'
+endif
+
+" When you press gv you Ack after the selected text
+vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
+
+" Open Ack and put the cursor in the right position
+map <leader>g :Ack 
+
+" When you press <leader>r you can search and replace the selected text
+vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+
+" Do :help cope if you are unsure what cope is. It's super useful!
+"
+" When you search with Ack, display your results in cope by doing:
+"   <leader>cc
+"
+" To go to the next search result do:
+"   <leader>n
+"
+" To go to the previous search results do:
+"   <leader>p
+"
+map <leader>cc :botright cope<cr>
+map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
+map <leader>n :cn<cr>
+map <leader>p :cp<cr>
+
+" Make sure that enter is never overriden in the quickfix window
+autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -171,7 +192,7 @@ func! DeleteTillSlash()
 endfunc
 
 func! CurrentFileDir(cmd)
-    return a:cmd . " " . expand("%:p:h") . "/"
+    return a:cmd . " " . escape(expand("%:p:h"), " ") . "/"
 endfunc
 
 "=================================================================================
