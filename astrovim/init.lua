@@ -4,6 +4,12 @@
 -- You can think of a Lua "table" as a dictionary like data structure the
 -- normal format is "key = value". These also handle array like data structures
 -- where a value with no key simply has an implicit numeric key
+
+-- 
+local function get_configurer(config_name)
+  return loadstring("require('plugins." .. config_name .. "').configure()")
+end
+      
 local config = {
 
   -- Configure AstroNvim updates
@@ -33,7 +39,7 @@ local config = {
       -- industry, nice high contrast dark, teals and pinks
       -- peachpuff, light peach theme
       -- murphy, high contrast, oranges and teals
-  colorscheme = "murphy",
+  colorscheme = "lunaperche",
 
   -- Add highlight groups in any theme
   highlights = {
@@ -246,6 +252,34 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
+      --
+       
+          
+      { -- Vim game by Primeagen
+        "ThePrimeagen/vim-be-good",
+        config = function()
+          require("vim-be-good")
+        end,
+      },
+
+      { -- R REPL
+        "jalvesaq/Nvim-R",
+        config = function()
+          require("Nvim-R").configure()
+        end,
+      },
+
+      { -- RMarkdown
+        'vim-pandoc/vim-rmarkdown',
+        requires = {
+          {'vim-pandoc/vim-pandoc'},
+          {'vim-pandoc/vim-pandoc-syntax'},
+        },
+        config = function()
+          require("vim-rmarkdown")
+        end,
+      },
+        
     },
 
     -- All other entries override the require("<key>").setup({...}) call for default plugins
