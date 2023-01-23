@@ -4,14 +4,7 @@
 -- You can think of a Lua "table" as a dictionary like data structure the
 -- normal format is "key = value". These also handle array like data structures
 -- where a value with no key simply has an implicit numeric key
-
--- 
-local function get_configurer(config_name)
-  return loadstring("require('plugins." .. config_name .. "').configure()")
-end
-      
 local config = {
-
   -- Configure AstroNvim updates
   updater = {
     remote = "origin", -- remote to use
@@ -32,14 +25,8 @@ local config = {
   },
 
   -- Set colorscheme to use
-  -- Favorites:
-      -- darkblue
-      -- delek, nice light theme, high contrast
-      -- elflord, nice high contrast dark
-      -- industry, nice high contrast dark, teals and pinks
-      -- peachpuff, light peach theme
-      -- murphy, high contrast, oranges and teals
-  colorscheme = "lunaperche",
+  --colorscheme = "default_theme",
+  --colorscheme = "torte",
 
   -- Add highlight groups in any theme
   highlights = {
@@ -157,7 +144,7 @@ local config = {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
+        enabled = false, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -252,36 +239,23 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
-      --
-       
-          
-      { -- Vim game by Primeagen
-        "ThePrimeagen/vim-be-good",
-        config = function()
-          require("vim-be-good")
-        end,
-      },
-
-      { -- R REPL
+      { -- R REPL for vim
         "jalvesaq/Nvim-R",
         config = function()
-          require("Nvim-R").configure()
-        end,
+          vim.g.R_assign = 0
+        end
       },
-
-      { -- RMarkdown
-        'vim-pandoc/vim-rmarkdown',
+      -- RMarkdown
+      {'vim-pandoc/vim-rmarkdown',
         requires = {
-          {'vim-pandoc/vim-pandoc'},
-          {'vim-pandoc/vim-pandoc-syntax'},
-        },
-        config = function()
-          require("vim-rmarkdown")
-        end,
+              {'vim-pandoc/vim-pandoc'},
+              {'vim-pandoc/vim-pandoc-syntax'},
+        }
       },
-        
+      {"ThePrimeagen/vim-be-good"},
+      {"RRethy/nvim-base16"},
+      
     },
-
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
       -- config variable is the default configuration table for the setup function call
@@ -400,6 +374,20 @@ local config = {
     --   },
     -- }
   end,
+
+  --colorscheme = "base16-solarized-dark"
+  --colorscheme = "base16-solarized-light"
+  --colorscheme = "base16-rose-pine"
+  --colorscheme = "base16-catppuccin"
+  --colorscheme = "base16-dirtysea" -- REALLY good light theme
+  --colorscheme = "base16-vulcan" -- REALLY nice dark navy theme
+  --colorscheme = "base16-everforest" -- nice earthy theme
+  --colorscheme = "base16-irblack" -- high contrast dark; really cool
+  --colorscheme = "base16-onedark" -- high contrast dark; really cool
+  --colorscheme = "base16-atelier-plateau" -- nice doo doo brown
+  --colorscheme = "base16-atelier-heath" -- like plateau, but with cool hightlight
+  colorscheme = "base16-stella" -- bearable purple
+  --colorscheme = "base16-tokyodark" -- dark, purply
 }
 
 return config
