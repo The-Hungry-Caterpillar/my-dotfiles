@@ -12,16 +12,12 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 
 # THEMES
-# OSH_THEME='purity'
 # OSH_THEME='modern' # this one looks nice. It has the brackets and stuff
-OSH_THEME='minimal' # looks nice. very minimal
-# OSH_THEME='simple' 
+# OSH_THEME='minimal' # looks nice. very minimal
 # OSH_THEME='clean' # name, short directory, git status
 # OSH_THEME='standard' # environment, name, machine, full directory
 # OSH_THEME='agnoster' # thick. name, full directory. fancy looking
-# OSH_THEME='duru' # current directory + parent, git status. clean
-# OSH_THEME='sirup' # working directory, short get status
-# OSH_THEME='random'
+OSH_THEME='half-life'
 
 
 # Uncomment the following line to use case-sensitive completion.
