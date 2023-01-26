@@ -13,7 +13,8 @@ cursor:
 font:
   normal:
     # Needs to be powerline font if using zsh theme with powerline
-    family: Ubuntu Mono derivative Powerline
+    #family: Ubuntu Mono derivative Powerline
+    family: Hack Nerd Font
   # Font size
   size: 18
   # Better font rendering for mac
@@ -35,12 +36,12 @@ window:
   # Remove buttons
   decorations: none
   # Opacity
-  opacity: 0.93
-  #opacity: 1
+  opacity: 0.92
+  # opacity: 1
   # Dimensions if not SimpleFullscreen
   dimensions:
-    columns: 86
-    lines: 50
+    columns: 90
+    lines: 45
 
 import:
   # Favorites:
@@ -49,4 +50,5 @@ import:
   #   horizon_dark.yaml
   #   ayu_dark.yaml # stock looking but dark and nicer, probs my fave
   #   one_dark.yaml
-  - /Users/jogata/src/alacritty-theme/themes/tokyo-night.yaml
+  #- /Users/jogata/src/alacritty-theme/themes/one_dark.yaml
+  - /Users/jogata/src/alacritty-theme/themes/ayu_dark.yaml
