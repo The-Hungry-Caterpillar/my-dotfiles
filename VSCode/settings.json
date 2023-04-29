@@ -1,0 +1,134 @@
+{
+  // Column line at 80 characters
+  "editor.rulers": [
+    80
+  ],
+
+  // Fix Window's terminal background issues.
+  "workbench.colorCustomizations": {
+        "terminal.ansiBlue": "#191919"
+  },
+
+  // Fix RMarkdown recognition
+  "files.associations": {
+    "*.Rmd": "rmd"
+  },
+
+  // Vim --------------------------------------------------------------------
+  "vim.leader": "<space>",
+  "vim.easymotion": false,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": false,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [","],
+      "after": ["/"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["<S-l>"],
+      "commands": ["workbench.action.nextEditorInGroup"]
+    },
+    {
+      "before": ["<S-h>"],
+      "commands": ["workbench.action.previousEditorInGroup"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.navigateRight"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.navigateLeft"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.navigateUp"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.navigateDown"]
+    },
+    {
+      "before": ["<leader>", "m"],
+      "commands": ["bookmarks.toggle"]
+    },
+    {
+      "before": ["<leader>", "b"],
+      "commands": ["bookmarks.list"]
+    }
+  ],
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    //{
+    //  "before": ["j"],
+    //  "after": ["j", "z", "z"]
+    //},
+    //{
+    //  "before": ["k"],
+    //  "after": ["k", "z", "z"]
+    //},
+    //{
+    //  "before": ["{"],
+    //  "after": ["{", "z", "z"]
+    //},
+    //{
+    //  "before": ["}"],
+    //  "after": ["}", "z", "z"]
+    //},
+  ],
+
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative",
+  "editor.cursorSurroundingLines": 18,
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
+  "workbench.editor.mouseBackForwardToNavigate": false,
+  "workbench.tips.enabled": false,
+  "workbench.startupEditor": "none",
+  //"r.rterm.windows": "C:\\Users\\ogataj\\AppData\\Roaming\\Python\\Python311\\Scripts\\radian.exe",
+  //"r.bracketedPaste": true,
+  "workbench.panel.defaultLocation": "right",
+  "workbench.editor.splitInGroupLayout": "vertical",
+  "workbench.editor.openSideBySideDirection": "down",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "editor.inlineSuggest.enabled": true,
+  "remote.SSH.remotePlatform": {
+    "centos1.whirc.local": "linux"
+  },
+
+  // less annoying warnings
+  "workbench.colorCustomizations": {
+      "editorError.foreground":   "#ffe60033",
+      "editorWarning.foreground": "#ffe60033",
+      "editorInfo.foreground":    "#ffe60033"
+  },
+  "workbench.iconTheme": "gruvbox-material-icon-theme",
+  "workbench.colorTheme": "Min Light",
+  "pomodoro.make": {
+    "notification": true,
+    "statusbar": {
+      "alignment": "right",
+      "priority": 1000
+    }
+  }
+}
