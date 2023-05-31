@@ -18,7 +18,7 @@
   "vim.leader": "<space>",
   "vim.easymotion": false,
   "vim.incsearch": true,
-  "vim.useSystemClipboard": false,
+  "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
 
@@ -99,15 +99,6 @@
   "editor.lineNumbers": "relative",
   "editor.cursorSurroundingLines": 18,
   "security.workspace.trust.untrustedFiles": "open",
-  "workbench.editor.enablePreviewFromCodeNavigation": true,
-  "workbench.editor.mouseBackForwardToNavigate": false,
-  "workbench.tips.enabled": false,
-  "workbench.startupEditor": "none",
-  //"r.rterm.windows": "C:\\Users\\ogataj\\AppData\\Roaming\\Python\\Python311\\Scripts\\radian.exe",
-  //"r.bracketedPaste": true,
-  "workbench.panel.defaultLocation": "right",
-  "workbench.editor.splitInGroupLayout": "vertical",
-  "workbench.editor.openSideBySideDirection": "down",
   "[python]": {
     "editor.formatOnType": true
   },
@@ -115,20 +106,23 @@
   "remote.SSH.remotePlatform": {
     "centos1.whirc.local": "linux"
   },
-
-  // less annoying warnings
-  "workbench.colorCustomizations": {
+  //"r.rterm.windows": "C:\\Users\\ogataj\\AppData\\Roaming\\Python\\Python311\\Scripts\\radian.exe",
+  //"r.bracketedPaste": true,
+  "zenMode.hideActivityBar": false,
+  // workbench settings --------------------------------------------------------
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
+  "workbench.editor.mouseBackForwardToNavigate": false,
+  "workbench.tips.enabled": false,
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "Monokai Classic Icons",
+  "workbench.sideBar.location": "right",
+  "workbench.colorCustomizations": { // less annoying warnings
       "editorError.foreground":   "#ffe60033",
       "editorWarning.foreground": "#ffe60033",
       "editorInfo.foreground":    "#ffe60033"
   },
-  "workbench.iconTheme": "gruvbox-material-icon-theme",
-  "workbench.colorTheme": "Min Light",
-  "pomodoro.make": {
-    "notification": true,
-    "statusbar": {
-      "alignment": "right",
-      "priority": 1000
-    }
-  }
+  "workbench.panel.defaultLocation": "bottom",
+  "workbench.editor.splitInGroupLayout": "vertical",
+  "workbench.editor.openSideBySideDirection": "right", // right or down
+  "workbench.colorTheme": "simple dark"
 }
