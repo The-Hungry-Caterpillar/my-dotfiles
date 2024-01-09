@@ -18,7 +18,7 @@
   "vim.leader": "<space>",
   "vim.easymotion": false,
   "vim.incsearch": true,
-  "vim.useSystemClipboard": true,
+  "vim.useSystemClipboard": false,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
 
@@ -26,7 +26,12 @@
     {
       "before": ["j", "k"],
       "after": ["<Esc>"]
+    },
+    {
+      "before": ["j", "j"],
+      "after": ["%", ">", "%"]
     }
+  
   ],
   
   "vim.normalModeKeyBindings": [
@@ -93,36 +98,82 @@
 
   "vim.handleKeys": {
     "<C-a>": false,
-    "<C-f>": false
+    "<C-f>": false,
+    "<C-n>": false
   },
+
+
+  // Other ---------------------------------------------------------------------
+  "remote.SSH.remotePlatform": {
+    "centos1.whirc.local": "linux",
+    "wh-centos-01.whirc.local": "linux",
+    "3.13.214.156": "linux"
+  },
+  // "security.workspace.trust.untrustedFiles": "open",
+  // "[python]": {
+  //   "editor.formatOnType": true
+  // },
+
+  // Editor --------------------------------------------------------------------
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
-  "editor.cursorSurroundingLines": 18,
-  "security.workspace.trust.untrustedFiles": "open",
-  "[python]": {
-    "editor.formatOnType": true
-  },
   "editor.inlineSuggest.enabled": true,
-  "remote.SSH.remotePlatform": {
-    "centos1.whirc.local": "linux"
-  },
-  //"r.rterm.windows": "C:\\Users\\ogataj\\AppData\\Roaming\\Python\\Python311\\Scripts\\radian.exe",
-  //"r.bracketedPaste": true,
-  "zenMode.hideActivityBar": false,
-  // workbench settings --------------------------------------------------------
+  "editor.suggest.showVariables": false,
+  "editor.accessibilitySupport": "off",
+
+  // Workbench -----------------------------------------------------------------
   "workbench.editor.enablePreviewFromCodeNavigation": true,
   "workbench.editor.mouseBackForwardToNavigate": false,
   "workbench.tips.enabled": false,
+  // highlight matching words inside cursor
+  "editor.occurrencesHighlight": false,
   "workbench.startupEditor": "none",
-  "workbench.iconTheme": "Monokai Classic Icons",
-  "workbench.sideBar.location": "right",
-  "workbench.colorCustomizations": { // less annoying warnings
+  "workbench.sideBar.location": "left",
+  // less annoying warnings
+  "workbench.colorCustomizations": {
       "editorError.foreground":   "#ffe60033",
       "editorWarning.foreground": "#ffe60033",
       "editorInfo.foreground":    "#ffe60033"
   },
   "workbench.panel.defaultLocation": "bottom",
-  "workbench.editor.splitInGroupLayout": "vertical",
-  "workbench.editor.openSideBySideDirection": "right", // right or down
-  "workbench.colorTheme": "simple dark"
+  // "workbench.editor.splitInGroupLayout": "vertical",
+  "workbench.editor.openSideBySideDirection": "down",
+  // "workbench.editor.openSideBySideDirection": "right",
+  "editor.cursorSurroundingLines": 30,
+  "git.ignoreLegacyWarning": true,
+  "window.zoomLevel": -1,
+
+  // Theme ---------------------------------------------------------------------
+  "workbench.iconTheme": "gruvbox-icon-theme",
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.colorTheme": "spaceduck",
+
+  "zenMode.hideActivityBar": false,
+
+  // Font ---------------------------------------------------------------------
+  // "editor.fontFamily": "OpenDyslexic",
+  // "editor.fontFamily": "Hack NF",
+  // "editor.fontFamily": "MesloLGL NF",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  // "editor.letterSpacing": -1,
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "UbuntuMono Nerd Font",
+  "terminal.integrated.fontSize": 16,
+
+  // radian -------------------------------------------------------------------
+  // "r.rterm.windows": "C:\\Users\\ogataj\\AppData\\Roaming\\Python\\Python311\\Scripts\\radian.exe",
+  // "r.rpath.linux" : "/home/ogataj/miniconda3/bin/radian",
+  // "r.bracketedPaste": true,
+  // "workbench.colorCustomizations": {
+  //   "activityBar.background": "#2b2e45",
+  //   "editor.background": "#1c2242",
+  //   "editorLineNumber.foreground": "#7083a5"
+  // }
+
+  // Nerd tree -----------------------------------------------------------------
+  // keep nerdtree open after opening new file?
+  "nerdtree.alwaysShowSidebar" : false
+
 }
+
